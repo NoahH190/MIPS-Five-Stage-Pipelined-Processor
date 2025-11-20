@@ -1,0 +1,23 @@
+MIPS Instruction Types
+
+R-type (Arithmetic instructions)
+  Format: op (6 bits), rs (5 bits), rt (5 bits), rd (5 bits), shamt (5 bits), funct (6 bits)
+  Used for arithmetic and logical instructions.
+
+I-type (Transfer, branch, immediate instructions)
+  Format: op (6 bits), rs (5 bits), rt (5 bits), address/immediate (16 bits)
+  Used for transfer, branch, and immediate operations.
+
+J-type (Jump instructions)
+  Format: op (6 bits), target address (26 bits)
+  Used for jump instructions.
+
+Field Descriptions
+  Op[31–26]: 6-bit operation code
+  RS[25–21]: 5-bit source register specifier
+  RT[20–16]: 5-bit target (source or destination) register or branch condition
+  Immediate[15–0]: 16-bit immediate value, branch displacement, or address displacement
+  Target[25–0]: 26-bit jump target address
+  RD[15–11]: 5-bit destination register specifier
+  Shamt[10–6]: 5-bit shift amount
+  Funct[5–0]: 6-bit function field
