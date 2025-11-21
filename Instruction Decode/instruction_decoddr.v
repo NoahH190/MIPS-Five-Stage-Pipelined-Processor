@@ -6,7 +6,7 @@ module instruction_decoder(
     output [4:0] o_RS,
     output [4:0] o_RT,
     output [4:0] o_RD
-);
+); //remove clock and reset at some point 
 
 reg [15:0] r_address;
 reg [4:0] r_RS;
