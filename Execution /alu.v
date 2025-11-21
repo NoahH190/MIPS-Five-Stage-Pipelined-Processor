@@ -1,8 +1,3 @@
-// Simple parametrizable ALU core
-// Inputs: i_src1, i_src2
-// Output: o_dest
-// Control: i_alu_ctrl selects operation
-
 module alu #(
 	parameter WIDTH = 32
 ) (
@@ -19,11 +14,11 @@ module alu #(
 	localparam ALU_AND  = 4'b0010;
 	localparam ALU_OR   = 4'b0011;
 	localparam ALU_XOR  = 4'b0100;
-	localparam ALU_SLL  = 4'b0101; // logical left by lower 5 bits
-	localparam ALU_SRL  = 4'b0110; // logical right by lower 5 bits
-	localparam ALU_SRA  = 4'b0111; // arithmetic right by lower 5 bits
-	localparam ALU_SLT  = 4'b1000; // set on less than (signed)
-	localparam ALU_SLTU = 4'b1001; // set on less than (unsigned)
+	localparam ALU_SLL  = 4'b0101; 
+	localparam ALU_SRL  = 4'b0110; 
+	localparam ALU_SRA  = 4'b0111; 
+	localparam ALU_SLT  = 4'b1000; 
+	localparam ALU_SLTU = 4'b1001; 
 
 	always @* begin
 		case (i_alu_ctrl)
