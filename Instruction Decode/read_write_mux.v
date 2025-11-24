@@ -1,6 +1,4 @@
 module read_write_mux (
-    input i_clk, 
-    input i_reset,
     input [4:0] i_RT, //sel 1
     input [4:0] i_RD, //sel 0
     input i_dest_sel,  //destination control signal

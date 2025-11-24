@@ -1,7 +1,7 @@
 module program_counter (
     input i_clk,
     input i_reset,
-    input [31:0] i_branch_address_2,
+    input [31:0] i_br_address_2,
     output reg [31:0] o_pc
 );
 

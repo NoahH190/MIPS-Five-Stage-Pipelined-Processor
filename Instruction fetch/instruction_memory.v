@@ -7,3 +7,5 @@ module instruction_memory(
     input [31:0] i_instruction,
     output reg [31:0] o_instruction
 );
+
+endmodule

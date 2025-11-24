@@ -1,6 +1,4 @@
 module instruction_decoder(
-    input i_clk, 
-    input i_reset,
     input [31:0] i_instruction,
     output [15:0] o_address,
     output [4:0] o_RS,

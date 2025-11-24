@@ -1,8 +1,10 @@
-module pcbranch_mux (
-    input i_clk,
-    input i_reset,
+module pcbr_mux (
     input i_pc_br_sel,
-    input [31:0] i_branch_adress_0,
-    input [31:0] i_add_next, 
-    output [31:0] o_branch_address_1
+    input [31:0] i_br_address_0,
+    input [31:0] i_add_next, //if sel true give add next 
+    output [31:0] o_br_address_1 //else give branch address
 );
+
+assign o_br_address_1 = i_pc_br_sel ? i_add_next : i_br_address_0;
+
+endmodule
