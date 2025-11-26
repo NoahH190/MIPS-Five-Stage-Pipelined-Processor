@@ -4,6 +4,7 @@ module alu #(
 	input  wire [WIDTH-1:0] i_src1,
 	input  wire [WIDTH-1:0] i_src2,
 	input  wire [3:0]       i_alu_ctrl,
+	input  wire tbd, //from shift_mux
 	output reg  [WIDTH-1:0] o_dest,
 	output wire             o_zero
 );
