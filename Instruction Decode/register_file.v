@@ -8,3 +8,6 @@ module register_file (
     output [31:0] o_src1;
     output [31:0] o_src2; 
 );
+
+
+endmodule 
