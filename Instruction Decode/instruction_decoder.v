@@ -1,9 +1,12 @@
 module instruction_decoder(
     input [31:0] i_instruction,
-    output [15:0] o_address,
-    output [4:0] o_RS,
-    output [4:0] o_RT,
-    output [4:0] o_RD
+    output reg [15:0] o_address,
+    output reg [4:0] o_RS,
+    output reg [4:0] o_RT,
+    output reg [4:0] o_RD,
+    output reg [5:0] o_opcode,
+    output reg [5:0] o_funct,
+    output reg [10:6] o_shamt,
 ); //remove clock and reset at some point 
 
 reg [15:0] r_address;

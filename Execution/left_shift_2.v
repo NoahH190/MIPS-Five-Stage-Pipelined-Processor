@@ -1,8 +1,8 @@
 module left_shift_2 (
-    input [31:0] tbd,
-    output reg [31:0] o_src1
+    input [31:0] i_sign_extend,
+    output reg [31:0] o_address
 );
 
-assign o_src1 = tbd << 2;
+assign o_address = i_sign_extend << 2;
 
 endmodule
