@@ -2,10 +2,10 @@ module alu #(
 	parameter WIDTH = 32
 ) (
 	input  wire [WIDTH-1:0] i_src1,
-	input  wire [WIDTH-1:0] i_src2,
+	input  wire [WIDTH-1:0] i_alu_mux,
 	input  wire [3:0]       i_alu_ctrl,
-	input  wire tbd, //from shift_mux
-	output reg  [WIDTH-1:0] o_dest,
+	input  wire i_shamt, //from shift_mux
+	output reg  [WIDTH-1:0] o_alu_result,
 	output wire             o_zero
 );
 

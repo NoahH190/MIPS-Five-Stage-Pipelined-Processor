@@ -1,8 +1,9 @@
 module memory_to_reg ( 
-    input [31:0] i_mem_data,
-    output reg [31:0] o_reg_data
+    input [31:0] i_memory_data,
+    input [31:0] i_alu_result,
+    input [5:0] i_opcode,
+    output reg [31:0] o_wb_data
 )
 
-assign o_reg_data = i_mem_data;
 
 endmodule
