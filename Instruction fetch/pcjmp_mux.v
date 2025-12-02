@@ -1,10 +1,10 @@
 module pcjmp_mux (
-    input i_pc_jmp_sel,
-    input [31:0] i_br_address_1, //sel true give branch address
-    input [31:0] i_pc_incrememt,  //sel false give jump address
-    output [31:0] o_br_address_2,
+    input  wire        i_pc_jmp_sel,
+    input  wire [31:0] i_br_address_1,
+    input  wire [31:0] i_pc_increment,
+    output wire [31:0] o_br_address_2
 );
 
-assign o_br_address_2 = i_pc_jmp_sel ? i_pc_incrememt : i_br_address_1;
+    assign o_br_address_2 = i_pc_jmp_sel ? i_pc_increment : i_br_address_1;
 
 endmodule

@@ -1,17 +1,10 @@
 module read_write_mux (
-    input [4:0] i_RT, //sel 1
-    input [4:0] i_RD, //sel 0
-    input [5:0] i_dest_sel,  //destination control signal
-    output o_mux_addr  //Mux output for RD 
-); 
+    input  wire [4:0] i_RT,
+    input  wire [4:0] i_RD,
+    input  wire       i_dest_sel,
+    output wire [4:0] o_mux_addr
+);
 
-reg r_mux_addr; 
+    assign o_mux_addr = (i_dest_sel) ? i_RT : i_RD;
 
-always @(posedge i_clk or posedge reset) begin 
-    if(reset) o_placeholder <= 0;
-    else r_mux_addr <= (i_dest_sel) ? i_RT : i_RD; 
-end 
-
-assign o_mux_addr = r_mux_addr;
-
-endmodule 
+endmodule

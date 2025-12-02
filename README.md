@@ -1,1 +1,2 @@
 # MIPS-Five-Stage-Pipelined-Processor
+This repository contains a Verilog implementation of a MIPS Five-Stage Pipelined Processor. The design includes the essential components required for a pipelined architecture, such as instruction fetch, instruction decode, execution, memory access, and write-back stages.

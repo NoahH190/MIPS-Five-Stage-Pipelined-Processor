@@ -1,17 +1,15 @@
 module program_counter (
-    input i_clk,
-    input i_reset,
-    input [31:0] i_br_address_2,
-    output reg [31:0] o_pc
+    input  wire        i_clk,
+    input  wire        i_reset,
+    input  wire [31:0] i_br_address_2,
+    output reg  [31:0] o_pc
 );
 
-reg [31: 0] r_pc; 
-
-always @(posedge i_clk or posedge reset) begin
-    if (reset == 1'b1) r_pc <= 0; 
-    else r_pc <= i_pc; 
-end 
-
-assign o_pc <= r_pc; 
+    always @(posedge i_clk or posedge i_reset) begin
+        if (i_reset)
+            o_pc <= 32'd0;
+        else
+            o_pc <= i_br_address_2;
+    end
 
 endmodule
