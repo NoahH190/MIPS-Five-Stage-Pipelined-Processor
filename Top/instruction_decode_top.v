@@ -3,7 +3,7 @@ module instruction_decode_top (
     input  wire        i_reset,
     input  wire [31:0] i_instruction,
     input  wire [31:0] i_wb_data,
-    input  wire [5:0]  i_dest_sel,
+    input  wire        i_dest_sel,
     input  wire [5:0]  i_se_ctrl,
     output wire [31:0] o_src1,
     output wire [31:0] o_src2,
@@ -25,6 +25,8 @@ module instruction_decode_top (
 
     instruction_decoder u_decoder (
         .i_instruction(i_instruction),
+        .i_clk(i_clk),
+        .i_reset(i_reset),
         .o_address(w_address),
         .o_RS(w_RS),
         .o_RT(w_RT),

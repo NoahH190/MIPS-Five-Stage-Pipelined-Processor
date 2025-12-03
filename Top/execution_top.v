@@ -34,9 +34,9 @@ module execution_top (
 
     alu u_alu (
         .i_src1(i_src1),
-        .i_alu_mux(w_alu_mux),
+        .i_src2(w_alu_mux),
         .i_alu_ctrl(w_alu_ctrl_ext),
-        .i_shamt(i_shamt[0]),
+        .i_shamt(i_shamt),
         .o_alu_result(o_alu_result),
         .o_zero(o_zero)
     );

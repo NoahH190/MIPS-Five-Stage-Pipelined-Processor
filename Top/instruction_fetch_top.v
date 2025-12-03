@@ -42,7 +42,7 @@ module instruction_fetch_top (
     pcjmp_mux u_pcjmp_mux (
         .i_pc_jmp_sel(i_jump),
         .i_br_address_1(w_br1),
-        .i_pc_incrememt(w_pc_increment),
+        .i_pc_increment(w_pc_increment),
         .o_br_address_2(w_pc_next)
     );
 

@@ -28,7 +28,7 @@ module top (
     // Control / simple placeholders
     wire        ctrl_branch = id_opcode != 6'd0; // placeholder: non-zero opcode -> branch
     wire        ctrl_jump = 1'b0;
-    wire [5:0]  ctrl_dest_sel = 6'd0;
+    wire        ctrl_dest_sel = 1'b0;
     wire [5:0]  ctrl_se_ctrl = 6'd0;
 
     instruction_fetch_top u_if (
