@@ -1,10 +1,15 @@
 module instruction_decode_top (
+    // Clock / reset
     input  wire        i_clk,
     input  wire        i_reset,
+
+    // Inputs
     input  wire [31:0] i_instruction,
     input  wire [31:0] i_wb_data,
-    input  wire        i_dest_sel,
+    input  wire        i_dest_sel,   // destination select (0=RD,1=RT)
     input  wire [5:0]  i_se_ctrl,
+
+    // Outputs
     output wire [31:0] o_src1,
     output wire [31:0] o_src2,
     output wire [31:0] o_sign_extend,
@@ -16,6 +21,7 @@ module instruction_decode_top (
     output wire [5:0]  o_opcode
 );
 
+    // Internal nets
     wire [15:0] w_address;
     wire [4:0]  w_RS;
     wire [4:0]  w_RT;
@@ -23,6 +29,7 @@ module instruction_decode_top (
     wire [4:0]  w_mux_addr;
     wire [5:0]  w_opcode;
 
+    // Instruction decoder (extract fields)
     instruction_decoder u_decoder (
         .i_instruction(i_instruction),
         .i_clk(i_clk),
@@ -34,6 +41,7 @@ module instruction_decode_top (
         .o_opcode(w_opcode)
     );
 
+    // Destination mux: choose between RT and RD for writeback address
     read_write_mux u_dst_mux (
         .i_RT(w_RT),
         .i_RD(w_RD),
@@ -41,6 +49,7 @@ module instruction_decode_top (
         .o_mux_addr(w_mux_addr)
     );
 
+    // Register file: read sources and accept write-back data
     register_file u_regfile (
         .i_clk(i_clk),
         .i_reset(i_reset),
@@ -52,12 +61,14 @@ module instruction_decode_top (
         .o_src2(o_src2)
     );
 
+    // Sign/zero extend immediate/address
     sign_extend u_sign_ext (
         .i_address(w_address),
         .i_se_ctrl(i_se_ctrl),
         .o_sign_extend(o_sign_extend)
     );
 
+    // Expose decoded fields
     assign o_RS = w_RS;
     assign o_RT = w_RT;
     assign o_RD = w_RD;

@@ -45,7 +45,7 @@ module top (
         .o_pc(if_pc),
         .o_pc_increment(if_pc_increment)
     );
-
+    // Instruction Decode stage
     instruction_decode_top u_id (
         .i_clk(i_clk),
         .i_reset(i_reset),
