@@ -5,9 +5,7 @@ module alu_mux (
     output wire [31:0] o_alu_mux
 );
 
-    // Minimal behavior: select between sign-extended immediate and src2
-    // For now, choose sign-extend when opcode LSB is 1 (placeholder)
-    assign o_alu_mux = (i_sel_alu[0]) ? i_sign_extend : i_src2;
+    assign o_alu_mux = (i_sel_alu == 6'b000000 || i_sel_alu == 6'b000100) ? i_src2 : i_sign_extend;
 
 endmodule
 

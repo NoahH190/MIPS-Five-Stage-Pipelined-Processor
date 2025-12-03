@@ -6,7 +6,6 @@ module memory_to_reg (
     output wire [31:0] o_wb_data
 );
 
-    // Placeholder: select ALU result by default. Replace with opcode-based selection.
-    assign o_wb_data = i_alu_result;
+    assign o_wb_data = (i_opcode == 6'b100011) ? i_memory_data : i_alu_result;
 
 endmodule
