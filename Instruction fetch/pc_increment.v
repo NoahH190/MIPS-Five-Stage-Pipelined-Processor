@@ -3,5 +3,6 @@ module pc_increment (
     output wire [31:0] o_pc_increment
 );
 
+assign o_pc_increment = i_pc + 4;
 
 endmodule

@@ -2,5 +2,8 @@
     "editor.inlineSuggest.enabled": true,
     "editor.suggestSelection": "first",
     "github.copilot.enable": true,
-    "github.copilot.inlineSuggest.enable": true
+    "github.copilot.inlineSuggest.enable": true,
+    "files.associations": {
+        "*.v": "verilog"
+    }
 }
